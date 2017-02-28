@@ -50,8 +50,8 @@ function Discovery (opts) {
   self._onTrackerPeer = function (peer) {
     self.emit('peer', peer, 'tracker')
   }
-  self._onTrackerAnnounce = function () {
-    self.emit('trackerAnnounce')
+  self._onTrackerAnnounce = function (data) {
+    self.emit('trackerAnnounce', data)
   }
 
   if (opts.tracker === false) {
